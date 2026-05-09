@@ -199,7 +199,8 @@ func main() {
         sdrIndex = indexreturn
     }
 
-    dev, err := rtlsdr.Open(0)
+    log.Printf("Opening RTL-SDR device index %d from deviceString=%s", sdrIndex, *deviceString)
+    dev, err := rtlsdr.Open(sdrIndex)
     if err != nil {
         log.Fatal(err)
     }
